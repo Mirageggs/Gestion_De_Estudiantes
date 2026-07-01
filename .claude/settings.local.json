@@ -8,7 +8,9 @@
       "Bash(NODE_PATH=\"C:\\\\Users\\\\ajaeg\\\\AppData\\\\Roaming\\\\npm\\\\node_modules\" node generate_informe.js)",
       "PowerShell(Remove-Item \"C:\\\\Users\\\\ajaeg\\\\Downloads\\\\Gestion_De_Estudiantes-main\\\\Gestion_De_Estudiantes-main\\\\generate_informe.js\" -Force; \\(Get-Item \"C:\\\\Users\\\\ajaeg\\\\OneDrive\\\\Escritorio\\\\Informe_Gestion_Estudiantes.docx\"\\).Length)",
       "Bash(powershell.exe -ExecutionPolicy Bypass -File \".\\\\start.ps1\")",
-      "Bash(powershell.exe -ExecutionPolicy Bypass -File \".\\\\stop.ps1\")"
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \".\\\\stop.ps1\")",
+      "Bash(grep -E \"\\\\.db$\")",
+      "Bash(powershell.exe:*)"
     ]
   }
 }
