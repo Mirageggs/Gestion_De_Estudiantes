@@ -3,6 +3,7 @@ package com.colegio.gestionacceso.config;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.context.annotation.Profile; 
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
@@ -15,6 +16,7 @@ import java.util.Set;
  * Garantiza que existan los teléfonos de contacto en {@code alumnos}.
  */
 @Component
+@Profile("!prod")   // esta migración es solo para SQLite (dev)
 public class AlumnosSchemaMigration implements ApplicationRunner {
 
     private final JdbcTemplate jdbcTemplate;
