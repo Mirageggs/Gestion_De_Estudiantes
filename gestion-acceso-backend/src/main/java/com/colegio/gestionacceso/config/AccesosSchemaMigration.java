@@ -20,6 +20,7 @@ import java.util.Set;
  */
 @Component
 @Order(0)
+@Profile("!prod")   // esta migración es solo para SQLite (dev)
 public class AccesosSchemaMigration implements ApplicationRunner {
 
     private static final Logger log = LoggerFactory.getLogger(AccesosSchemaMigration.class);
