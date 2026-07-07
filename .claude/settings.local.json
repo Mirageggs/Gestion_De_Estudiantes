@@ -10,7 +10,13 @@
       "Bash(powershell.exe -ExecutionPolicy Bypass -File \".\\\\start.ps1\")",
       "Bash(powershell.exe -ExecutionPolicy Bypass -File \".\\\\stop.ps1\")",
       "Bash(grep -E \"\\\\.db$\")",
-      "Bash(powershell.exe:*)"
+      "Bash(powershell.exe:*)",
+      "Bash(npm start:*)",
+      "Bash(curl -s http://localhost:3001/status)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\(x86\\)/Google/Chrome/Application/**)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill:*)"
     ]
   }
 }
