@@ -41,30 +41,33 @@ const chromePath = resolveChromePath();
 
 function buildPuppeteerOptions() {
   const options = {
-    headless: true,
+    headless: "new", // Usa la nueva API de headless
+    executablePath: '/usr/bin/chromium',
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
       '--disable-gpu',
-      '--no-zygote',             // CRÍTICO: Evita error de OOM score
-      '--single-process',        // Útil en entornos con poca RAM/restricciones
+      '--no-zygote',
       '--disable-extensions',
-      '--disable-infobars',
-      '--hide-scrollbars',
-      '--mute-audio',
+      '--disable-software-rasterizer',
+      '--disable-dev-shm-usage',
       '--no-first-run',
       '--no-default-browser-check',
-      '--ignore-certificate-errors',
+      '--disable-features=IsolateOrigins,site-per-process',
+      '--disable-features=AudioServiceOutOfProcess',
+      '--disable-features=Translate',
+      '--disable-features=CalculateNativeWinOcclusion',
+      '--proxy-server="direct://"', // Evita la búsqueda de proxy
+      '--proxy-bypass-list=*',       // Evita la búsqueda de proxy
     ],
   };
-
   if (chromePath) {
     options.executablePath = chromePath;
   }
-
   return options;
 }
+  
 
 function clearSessionData() {
   for (const dir of [AUTH_DIR, CACHE_DIR]) {
