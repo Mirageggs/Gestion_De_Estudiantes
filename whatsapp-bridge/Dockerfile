@@ -1,8 +1,7 @@
 FROM node:20-slim
- 
-# Chromium + fuentes y librerías que puppeteer necesita en headless
 RUN apt-get update && apt-get install -y --no-install-recommends \
     chromium \
+    dbus \
     fonts-liberation \
     libnss3 \
     libatk-bridge2.0-0 \
