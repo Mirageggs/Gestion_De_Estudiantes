@@ -11,13 +11,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libasound2 \
     libgbm1 \
     ca-certificates \
+    libx11-xcb1 \
+    libxcb-dri3-0 \
+    libdrm2 \
+    libxshmfence1 \
  && rm -rf /var/lib/apt/lists/*
  
 # index.js ya busca /usr/bin/chromium; lo fijamos explícitamente
 ENV CHROME_PATH=/usr/bin/chromium
+
 # Evita que npm descargue otro Chromium (ahorra ~300MB y tiempo de build)
 ENV PUPPETEER_SKIP_DOWNLOAD=true
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
  
 WORKDIR /app
 COPY package*.json ./

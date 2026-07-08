@@ -46,13 +46,16 @@ function buildPuppeteerOptions() {
       '--no-sandbox',
       '--disable-setuid-sandbox',
       '--disable-dev-shm-usage',
-      '--disable-accelerated-2d-canvas',
       '--disable-gpu',
-      '--disable-features=IsolateOrigins,site-per-process',
-      '--disable-features=MemorySaverMode',
-      '--disable-blink-features=AutomationControlled',
+      '--no-zygote',             // CRÍTICO: Evita error de OOM score
+      '--single-process',        // Útil en entornos con poca RAM/restricciones
+      '--disable-extensions',
+      '--disable-infobars',
+      '--hide-scrollbars',
+      '--mute-audio',
       '--no-first-run',
       '--no-default-browser-check',
+      '--ignore-certificate-errors',
     ],
   };
 
