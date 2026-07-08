@@ -53,16 +53,6 @@ function buildPuppeteerOptions() {
       '--disable-blink-features=AutomationControlled',
       '--no-first-run',
       '--no-default-browser-check',
-      '--single-process',
-      '--no-zygote',
-      '--disable-extensions',
-      '--disable-background-networking',
-      '--disable-sync',
-      '--disable-default-apps',
-      '--disable-component-update',
-      '--disable-features=Translate,BackForwardCache,AcceptCHFrame,MediaRouter,OptimizationHints',
-      '--mute-audio',
-      '--hide-scrollbars',
     ],
   };
   if (chromePath) {
